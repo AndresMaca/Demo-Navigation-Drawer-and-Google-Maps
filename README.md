@@ -40,6 +40,8 @@ public class SplashActivity extends AppCompatActivity {
 
 
 # Navigation drawer
+
+![2](https://cloud.githubusercontent.com/assets/25255847/26516516/885a8122-4244-11e7-9392-7dce2cacc5a5.png)
 Para acceder desde el  naviagation drawer al mapa de ubicación
 ```java
 
@@ -72,8 +74,6 @@ Para acceder desde el  naviagation drawer al mapa de ubicación
     }
 }
 ```
-![2](https://cloud.githubusercontent.com/assets/25255847/26516516/885a8122-4244-11e7-9392-7dce2cacc5a5.png)
-
 # Crear un mapa personalizado
 Antes de empezar a utilizar el  API en nuestras aplicaciones será necesario realizar algunos preparativos, y es que para hacer uso de los servicios de Google Maps es necesario que previamente generemos una Clave de API (o API key) asociada a nuestra aplicación. Éste es un proceso sencillo y se realiza accediendo a la [Consola de Desarrolladores] (https://console.developers.google.com/)de Google..
 
@@ -87,7 +87,7 @@ Configuramos en  build.gradle
 compile 'com.google.android.gms:play-services-maps:10.2.6'
 ```
 #
-configuramos la clave de API para Google Maps en AndroidManifest.xml
+Agregamos  la clave de API para Google Maps en AndroidManifest.xml
 ```xml
 <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -98,7 +98,7 @@ configuramos la clave de API para Google Maps en AndroidManifest.xml
 
 ```
 #
-
+Añadimos Google Maps dentro de una clase Fragment
 ```java
 
 public class ContactUsFragment extends Fragment implements OnMapReadyCallback {
@@ -116,7 +116,6 @@ public class ContactUsFragment extends Fragment implements OnMapReadyCallback {
 
         return v;
     }
-
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -142,5 +141,5 @@ public class ContactUsFragment extends Fragment implements OnMapReadyCallback {
     }
 }
 
-``
+```
 ![3](https://cloud.githubusercontent.com/assets/25255847/26516515/882bc6de-4244-11e7-8036-a332f59c424c.png)
