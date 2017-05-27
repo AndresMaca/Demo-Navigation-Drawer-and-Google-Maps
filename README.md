@@ -4,6 +4,8 @@ Navigation Drawer  y  Google Maps Demo
 
 
 ## Splash activity
+Creación pantalla de bienvenida
+
 ```java
 package menurestaurante.proyecto.mauriciogarcia.ejemplonaviationdrawer;
 
