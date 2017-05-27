@@ -79,8 +79,68 @@ Antes de empezar a utilizar el  API en nuestras aplicaciones será necesario rea
 
 En el segundo paso tendremos que poner un nombre descriptivo a la clave de API que se va a generar, no es demasiado relevante, por lo que podemos dejar el que nos proponen por defecto. También en este paso se nos da la posibilidad de poder restringir el uso de este proyecto a determinadas aplicaciones concretas. Como es una práctica baste recomendable vamos a ver cómo hacerlo. Pulsaremos sobre el botón “+ Añadir nombre de paquete y huella digital” y veremos que se solicitan dos datos:
 
-Nombre de paquete
-Huella digital de certificado SHA-1
+Nombre de paquete y 
+Huella digital de certificado SHA-1  La obtenemos con el siguiente comando c:\>"C:\Program Files\Java\jdk1.8.0_91\bin\keytool" -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+#
+Configuramos en  build.gradle  
+```java
+compile 'com.google.android.gms:play-services-maps:10.2.6'
+```
+#
+configuramos la clave de API para Google Maps en AndroidManifest.xml
+```xml
+<meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
 
+```
+#
 
+```java
+
+public class ContactUsFragment extends Fragment implements OnMapReadyCallback {
+
+    GoogleMap map;
+
+    public ContactUsFragment() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+                View v= inflater.inflate(R.layout.fragment_contact_us,container, false);
+
+        return v;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        SupportMapFragment mapFragment = (SupportMapFragment)
+                getChildFragmentManager().findFragmentById(R.id.map1);
+        mapFragment.getMapAsync(this);
+    }
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        map = googleMap;
+
+        map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+        UiSettings uiSettings = map.getUiSettings();
+        uiSettings.setZoomControlsEnabled(true);
+
+        LatLng  pp= new LatLng(13.8147954,-88.8636758);
+        map.addMarker(new MarkerOptions().position(pp).title("Restaurante Ilobasco"));
+
+        float zoomlevel = 16;
+
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(pp,zoomlevel));
+    }
+}
+
+``
 ![3](https://cloud.githubusercontent.com/assets/25255847/26516515/882bc6de-4244-11e7-8036-a332f59c424c.png)
