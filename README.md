@@ -44,6 +44,7 @@ public class SplashActivity extends AppCompatActivity {
 # Navigation drawer
 
 ![2](https://cloud.githubusercontent.com/assets/25255847/26516516/885a8122-4244-11e7-9392-7dce2cacc5a5.png)
+#
 Para acceder desde el  naviagation drawer al mapa de ubicación
 ```java
 
