@@ -82,15 +82,16 @@ Antes de empezar a utilizar el  API en nuestras aplicaciones será necesario rea
 
 En el segundo paso tendremos que poner un nombre descriptivo a la clave de API que se va a generar, no es demasiado relevante, por lo que podemos dejar el que nos proponen por defecto. También en este paso se nos da la posibilidad de poder restringir el uso de este proyecto a determinadas aplicaciones concretas. Como es una práctica baste recomendable vamos a ver cómo hacerlo. Pulsaremos sobre el botón “+ Añadir nombre de paquete y huella digital” y veremos que se solicitan dos datos:
 
-Nombre de paquete y 
-Huella digital de certificado SHA-1  La obtenemos con el siguiente comando c:\>"C:\Program Files\Java\jdk1.8.0_91\bin\keytool" -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+- Nombre de paquete 
+- Huella digital de certificado SHA-1
+La obtenemos con el siguiente comando c:\>"C:\Program Files\Java\jdk1.8.0_91\bin\keytool" -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android. 
 #
 Configuramos en  build.gradle  
 ```java
 compile 'com.google.android.gms:play-services-maps:10.2.6'
 ```
 #
-Agregamos  la clave de API para Google Maps en AndroidManifest.xml
+  Incluimos la clave de API en el archivo AndroidManifest.xm
 ```xml
 <meta-data
             android:name="com.google.android.geo.API_KEY"
