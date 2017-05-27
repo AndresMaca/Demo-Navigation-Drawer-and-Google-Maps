@@ -55,7 +55,7 @@ Para acceder desde el  naviagation drawer al mapa de ubicación
         int id = item.getItemId();
 
         if (id == R.id.nav_inicio) {
-            // Handle the camera action
+            // Accion inicio
         } else if (id == R.id.nav_categorias) {
 
         } else if (id == R.id.nav_slideshow) {
