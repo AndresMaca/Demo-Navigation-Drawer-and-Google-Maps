@@ -84,6 +84,7 @@ En el segundo paso tendremos que poner un nombre descriptivo a la clave de API q
 
 - Nombre de paquete 
 - Huella digital de certificado SHA-1
+#
 La obtenemos con el siguiente comando c:\>"C:\Program Files\Java\jdk1.8.0_91\bin\keytool" -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android. 
 #
 Configuramos en  build.gradle  
