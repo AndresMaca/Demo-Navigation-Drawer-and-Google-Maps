@@ -1,4 +1,5 @@
-# Android Demo-Navigation-Drawer-and-Google-Maps
+#  Android demo Navigation Drawer and Google Maps  
+
 Navigation Drawer  and Google Maps Demo
 
 
@@ -34,7 +35,4 @@ public class SplashActivity extends AppCompatActivity {
 }
 
 ```
-
-```xml
-
-```
+#
